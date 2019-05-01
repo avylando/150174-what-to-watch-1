@@ -1,7 +1,7 @@
 # Личный проект «Что посмотреть» [![Build status][travis-image]][travis-url]
 
 * Студент: [Анатолий Долгов](https://up.htmlacademy.ru/react/1/user/150174).
-* Наставник: `Неизвестно`.
+* Наставник: [`Никита Ткачук`](https://github.com/dreamniker).
 
 ---
 
