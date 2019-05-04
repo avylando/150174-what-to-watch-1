@@ -3,7 +3,8 @@ import ReactDOM from "react-dom";
 import App from "./components/app/app.js";
 
 const init = () => {
-  ReactDOM.render(<App />, document.querySelector(`#root`));
+  const names = [`Fantastic Beasts`, `Bohemian Rhapsody`, `Macbeth`];
+  ReactDOM.render(<App filmNames={names} />, document.querySelector(`#root`));
 };
 
 init();
