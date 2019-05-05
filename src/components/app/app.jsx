@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const App = (props) => {
-  const {filmNames} = props;
+  const {filmNames, onClick = () => {}} = props;
 
   return (
     <div>
@@ -250,7 +250,7 @@ const App = (props) => {
                       height="175"
                     />
                   </div>
-                  <h3 className="small-movie-card__title">
+                  <h3 className="small-movie-card__title" onClick={onClick()}>
                     <a
                       className="small-movie-card__link"
                       href="movie-page.html"
@@ -289,7 +289,8 @@ const App = (props) => {
 };
 
 App.propTypes = {
-  filmNames: PropTypes.array.isRequired
+  filmNames: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onClick: PropTypes.func
 };
 
 export default App;
