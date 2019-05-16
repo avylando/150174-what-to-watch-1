@@ -19,14 +19,12 @@ class FilmsList extends React.PureComponent {
     return (
       <div className="catalog__movies-list">
         {filmsData.map((filmData, index) => {
-          const {title, imageSrc} = filmData;
           return (
             <FilmCard
-              title={title}
-              imageSrc={imageSrc}
+              data={filmData}
               startPreview={() => {
                 this.setState({
-                  filmCard: {id: index, title}
+                  filmCard: filmData
                 });
               }}
               key={`card` + index}

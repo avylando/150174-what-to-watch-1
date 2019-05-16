@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const FilmCard = (props) => {
-  const {title, imageSrc, startPreview, playFilm} = props;
-
+  const {data, startPreview, playFilm} = props;
+  const {title, imageSrc} = data;
   return (
     <article className="small-movie-card catalog__movies-card" onMouseEnter={startPreview}>
-      <button className="small-movie-card__play-btn" type="button" onClick={playFilm}>
+      <button className="small-movie-card__play-btn" type="button" onClick={() => playFilm(data)}>
         Play
       </button>
       <div className="small-movie-card__image">
@@ -27,8 +27,10 @@ const FilmCard = (props) => {
 };
 
 FilmCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  imageSrc: PropTypes.string.isRequired,
+  data: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    imageSrc: PropTypes.string.isRequired,
+  }),
   startPreview: PropTypes.func,
   playFilm: PropTypes.func
 };
