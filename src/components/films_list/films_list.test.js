@@ -1,11 +1,11 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import App from "./app.jsx";
+import FilmsList from "./films_list.jsx";
 
-it(`App correctly renders MainScreen`, () => {
+it(`FilmsList correctly renders FilmCards`, () => {
   const tree = renderer
     .create(
-        <App
+        <FilmsList
           filmsData={[
             {
               title: `Bohemian Rhapsody`,
