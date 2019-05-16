@@ -1,18 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const filmCard = (props) => {
-  const {title, imageSrc, startPreview} = props;
+const FilmCard = (props) => {
+  const {title, imageSrc, startPreview, playFilm} = props;
 
   return (
-    <article className="small-movie-card catalog__movies-card" onMouseEnter={startPreview()}>
-      <button className="small-movie-card__play-btn" type="button">
+    <article className="small-movie-card catalog__movies-card" onMouseEnter={startPreview}>
+      <button className="small-movie-card__play-btn" type="button" onClick={playFilm}>
         Play
       </button>
       <div className="small-movie-card__image">
         <img
           src={imageSrc}
-          alt="No Country for Old Men"
+          alt={title}
           width="280"
           height="175"
         />
@@ -26,10 +26,11 @@ const filmCard = (props) => {
   );
 };
 
-filmCard.propTypes = {
+FilmCard.propTypes = {
   title: PropTypes.string.isRequired,
   imageSrc: PropTypes.string.isRequired,
-  startPreview: PropTypes.func.isRequired
+  startPreview: PropTypes.func,
+  playFilm: PropTypes.func
 };
 
-export default filmCard;
+export default FilmCard;
