@@ -9,8 +9,6 @@ class FilmsList extends React.PureComponent {
     this.state = {
       filmCard: {}
     };
-
-    this.props = props;
   }
 
   render() {
@@ -21,10 +19,10 @@ class FilmsList extends React.PureComponent {
         {filmsData.map((filmData, index) => {
           return (
             <FilmCard
-              data={filmData}
-              startPreview={() => {
+              filmData={filmData}
+              cardHoverHandler={(cardData) => {
                 this.setState({
-                  filmCard: filmData
+                  filmCard: cardData
                 });
               }}
               key={`card` + index}
@@ -39,7 +37,9 @@ class FilmsList extends React.PureComponent {
 FilmsList.propTypes = {
   filmsData: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
-    imageSrc: PropTypes.string.isRequired
+    imageSrc: PropTypes.string.isRequired,
+    previewSrc: PropTypes.string.isRequired,
+    videoSrc: PropTypes.string.isRequired,
   }))
 };
 

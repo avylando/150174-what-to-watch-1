@@ -8,14 +8,16 @@ Enzyme.configure({adapter: new Adapter()});
 it(`Play button correctly handle click`, () => {
   const film =
     {
-      title: `Pulp Fiction`,
-      imageSrc: `img/pulp-fiction.jpg`,
+      title: `Macbeth`,
+      imageSrc: `img/macbeth.jpg`,
+      previewSrc: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+      videoSrc: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
     };
 
-  const clickHandler = jest.fn();
-  const filmCard = shallow(<FilmCard data={film} playFilm={clickHandler} />);
-  const playButton = filmCard.find(`.small-movie-card__play-btn`);
+  const hoverHandler = jest.fn();
+  const filmCard = shallow(<FilmCard filmData={film} cardHoverHandler={hoverHandler} />);
+  // const playButton = filmCard.find(`.small-movie-card__play-btn`);
 
-  playButton.simulate(`click`, {preventDefault() {}});
-  expect(clickHandler.mock.calls[0][0]).toMatchObject(film);
+  filmCard.simulate(`mouseenter`, {preventDefault() {}});
+  expect(hoverHandler.mock.calls[0][0]).toMatchObject(film);
 });

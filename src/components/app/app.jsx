@@ -10,7 +10,9 @@ const App = (props) => {
 App.propTypes = {
   filmsData: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
-    imageSrc: PropTypes.string.isRequired
+    imageSrc: PropTypes.string.isRequired,
+    previewSrc: PropTypes.string.isRequired,
+    videoSrc: PropTypes.string.isRequired,
   }))
 };
 export default App;

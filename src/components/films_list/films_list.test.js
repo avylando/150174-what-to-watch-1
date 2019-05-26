@@ -10,14 +10,14 @@ it(`FilmsList correctly renders FilmCards`, () => {
             {
               title: `Bohemian Rhapsody`,
               imageSrc: `img/bohemian-rhapsody.jpg`,
+              previewSrc: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+              videoSrc: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
             },
             {
               title: `Macbeth`,
               imageSrc: `img/macbeth.jpg`,
-            },
-            {
-              title: `Pulp Fiction`,
-              imageSrc: `img/pulp-fiction.jpg`,
+              previewSrc: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
+              videoSrc: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
             }
           ]}
         />
