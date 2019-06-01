@@ -1,25 +1,21 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import MainScreen from "./main_screen.jsx";
+import VideoPlayer from "./videoplayer.jsx";
 
-it(`MainScreen correctly renders FilmsList`, () => {
+it(`FilmsList correctly renders FilmCards`, () => {
   const tree = renderer
     .create(
-        <MainScreen
-          filmsData={[
+        <VideoPlayer
+          filmData={
             {
               title: `Bohemian Rhapsody`,
               imageSrc: `img/bohemian-rhapsody.jpg`,
               previewSrc: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
               videoSrc: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
-            },
-            {
-              title: `Macbeth`,
-              imageSrc: `img/macbeth.jpg`,
-              previewSrc: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
-              videoSrc: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
             }
-          ]}
+          }
+          isPlaying={false}
+          withSound={false}
         />
     )
     .toJSON();
