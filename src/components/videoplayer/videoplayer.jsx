@@ -8,6 +8,7 @@ class VideoPlayer extends React.PureComponent {
     this.state = {
       progress: 0,
       percentProgress: 0,
+      withSound: props.withSound,
       isPlaying: props.isPlaying,
       isLoading: true,
       hasSound: false
@@ -23,20 +24,14 @@ class VideoPlayer extends React.PureComponent {
     const {title, imageSrc, previewSrc, videoSrc} = filmData;
     const {progress, percentProgress, isPlaying} = this.state;
 
+    if (isPreview) {
+      this.setState({isPlaying: this.props.isPlaying});
+    }
+
     return (
       <React.Fragment>
         <div className="player"
           style={{zIndex: (isPreview && !isPlaying) ? -1 : 1}}
-          onMouseEnter={() => {
-            if (isPreview) {
-              this.setState({isPlaying: true});
-            }
-          }}
-          onMouseLeave={() => {
-            if (isPreview) {
-              this.setState({isPlaying: false});
-            }
-          }}
         >
           <video
             ref={this._videoRef}
@@ -80,31 +75,33 @@ class VideoPlayer extends React.PureComponent {
   componentDidMount() {
     const video = this._videoRef.current;
 
-    video.muted = this.props.isPreview;
-    video.oncanplaythrough = () => {
-      this.setState({
-        isLoading: false,
-      });
-    };
+    if (video) {
+      video.muted = !this.state.withSound;
+      video.oncanplaythrough = () => {
+        this.setState({
+          isLoading: false,
+        });
+      };
 
-    video.onplay = () => {
-      this.setState({
-        isPlaying: true,
-      });
-    };
+      video.onplay = () => {
+        this.setState({
+          isPlaying: true,
+        });
+      };
 
-    video.onpause = () => {
-      this.setState({
-        isPlaying: false,
-      });
-    };
+      video.onpause = () => {
+        this.setState({
+          isPlaying: false,
+        });
+      };
 
-    video.ontimeupdate = () => {
-      this.setState({
-        progress: video.currentTime,
-        percentProgress: (video.duration / 100) * video.currentTime
-      });
-    };
+      video.ontimeupdate = () => {
+        this.setState({
+          progress: video.currentTime,
+          percentProgress: (video.duration / 100) * video.currentTime
+        });
+      };
+    }
   }
 
   componentDidUpdate() {
@@ -150,9 +147,8 @@ VideoPlayer.propTypes = {
   }),
   isPreview: PropTypes.bool,
   isPlaying: PropTypes.bool.isRequired,
+  withSound: PropTypes.bool.isRequired,
   playButtonHandler: PropTypes.func,
-  previewStartHandler: PropTypes.func,
-  previewEndHandler: PropTypes.func,
 };
 
 export default VideoPlayer;

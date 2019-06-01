@@ -43,9 +43,8 @@ class FilmCard extends React.PureComponent {
         <VideoPlayer
           filmData={filmData}
           isPreview={true}
+          withSound={false}
           isPlaying={whatShowed === `video`}
-          previewStartHandler={this._previewStartHandler}
-          previewEndHandler={this._previewEndHandler}
         />
         <h3 className="small-movie-card__title">
           <a className="small-movie-card__link" href="movie-page.html">

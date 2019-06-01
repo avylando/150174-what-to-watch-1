@@ -14,7 +14,8 @@ it(`FilmsList correctly renders FilmCards`, () => {
               videoSrc: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
             }
           }
-          isPlaying = {false}
+          isPlaying={false}
+          withSound={false}
         />
     )
     .toJSON();
