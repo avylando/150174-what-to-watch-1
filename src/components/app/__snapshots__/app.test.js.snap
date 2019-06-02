@@ -278,98 +278,31 @@ exports[`App correctly renders MainScreen 1`] = `
           <a
             className="catalog__genres-link"
             href="#"
+            onClick={[Function]}
           >
             All genres
           </a>
         </li>
         <li
-          className="catalog__genres-item"
+          className="catalog__genres-item "
         >
           <a
             className="catalog__genres-link"
             href="#"
+            onClick={[Function]}
           >
-            Comedies
+            Drama
           </a>
         </li>
         <li
-          className="catalog__genres-item"
+          className="catalog__genres-item "
         >
           <a
             className="catalog__genres-link"
             href="#"
+            onClick={[Function]}
           >
             Crime
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-          >
-            Documentary
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-          >
-            Dramas
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-          >
-            Horror
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-          >
-            Kids & Family
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-          >
-            Romance
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-          >
-            Sci-Fi
-          </a>
-        </li>
-        <li
-          className="catalog__genres-item"
-        >
-          <a
-            className="catalog__genres-link"
-            href="#"
-          >
-            Thrillers
           </a>
         </li>
       </ul>
@@ -407,6 +340,7 @@ exports[`App correctly renders MainScreen 1`] = `
             <video
               className="player__video"
               poster="img/bohemian-rhapsody.jpg"
+              src="https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
             />
             <button
               className="player__exit"
@@ -543,6 +477,7 @@ exports[`App correctly renders MainScreen 1`] = `
             <video
               className="player__video"
               poster="img/macbeth.jpg"
+              src="https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
             />
             <button
               className="player__exit"
@@ -679,6 +614,7 @@ exports[`App correctly renders MainScreen 1`] = `
             <video
               className="player__video"
               poster="img/pulp-fiction.jpg"
+              src="https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
             />
             <button
               className="player__exit"
