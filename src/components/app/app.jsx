@@ -1,5 +1,7 @@
 import React from "react";
+import {connect} from "react-redux";
 import PropTypes from "prop-types";
+
 import MainScreen from "../main_screen/main_screen.jsx";
 
 const App = (props) => {
@@ -15,4 +17,19 @@ App.propTypes = {
     videoSrc: PropTypes.string.isRequired,
   }))
 };
-export default App;
+
+const mapStateToProps = (state, ownProps) => {
+  return Object.assign({}, ownProps, {
+    filmsData: state.filmsList
+  });
+};
+
+const mapDispatchToProps = () => ({
+});
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(App);
+
+export {App};
